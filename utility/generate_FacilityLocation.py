@@ -54,7 +54,7 @@ def main() -> None:
         if not os.path.exists(facilitylocation_n_folder_path):
             os.makedirs(facilitylocation_n_folder_path, exist_ok=True)
 
-        for i in range(50):
+        for i in range(10):
             file_path = facilitylocation_n_folder_path + f'{i}.csv'
             if not os.path.exists(file_path):
                 generate_facility_location_instance(n, i+3, file_path)

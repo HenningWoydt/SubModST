@@ -54,7 +54,7 @@ def main() -> None:
         if not os.path.exists(clustering_n_folder_path):
             os.makedirs(clustering_n_folder_path, exist_ok=True)
 
-        for i in range(50):
+        for i in range(10):
             file_path = clustering_n_folder_path + f'{i}.mtx'
             if not os.path.exists(file_path):
                 generate_clustering_instance(n, i + 3, file_path)

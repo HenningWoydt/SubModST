@@ -43,7 +43,7 @@ cmake --build build --parallel "$(get_num_cores)" --target submodst_gtest
 cd ${ROOT}
 
 # create test data
-cd data && ./generate_all.sh
+cd utility && ./generate_all.sh
 cd ${ROOT}
 
 # run tests

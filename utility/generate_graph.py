@@ -58,7 +58,7 @@ def main() -> None:
         if not os.path.exists(graph_n_folder_path):
             os.makedirs(graph_n_folder_path, exist_ok=True)
 
-        for i in range(50):
+        for i in range(10):
             file_path = graph_n_folder_path + f'{i}.edges'
             if not os.path.exists(file_path):
                 generate_graph(n, file_path)

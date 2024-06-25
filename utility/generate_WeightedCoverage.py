@@ -56,7 +56,7 @@ def main() -> None:
         if not os.path.exists(weightedcoverage_n_folder_path):
             os.makedirs(weightedcoverage_n_folder_path, exist_ok=True)
 
-        for i in range(50):
+        for i in range(10):
             file_path = weightedcoverage_n_folder_path + f'{i}.csv'
             if not os.path.exists(file_path):
                 generate_weighted_coverage_instance(n, i+3, file_path)

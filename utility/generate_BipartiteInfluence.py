@@ -55,7 +55,7 @@ def main() -> None:
         if not os.path.exists(bipartiteinfluence_n_folder_path):
             os.makedirs(bipartiteinfluence_n_folder_path, exist_ok=True)
 
-        for i in range(50):
+        for i in range(10):
             file_path = bipartiteinfluence_n_folder_path + f'{i}.csv'
             if not os.path.exists(file_path):
                 generate_bipartite_influence_instance(i + 3, n, file_path)
