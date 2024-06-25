@@ -1,5 +1,5 @@
 """
-/* CCSMSM solver, that solves the Cardinality-Constrained Submodular Monotone
+/* SubModST solver, that solves the Cardinality-Constrained Submodular Monotone
    Subset Maximization problem.
    Copyright (C) 2024  Henning Woydt
 
@@ -56,8 +56,8 @@ FILES = [
     # ("soc/soc-gemsec-HU", False, ',')
 ]
 
-RAW_FOLDER_PATH = "../data/raw/network-repository"
-FOLDER_PATH = "../data/Graph"
+RAW_FOLDER_PATH = "raw/network-repository"
+FOLDER_PATH = "Graph"
 
 
 def crawl_data():

@@ -1,5 +1,5 @@
 """
-/* CCSMSM solver, that solves the Cardinality-Constrained Submodular Monotone
+/* SubModST solver, that solves the Cardinality-Constrained Submodular Monotone
    Subset Maximization problem.
    Copyright (C) 2024  Henning Woydt
 
@@ -17,7 +17,6 @@
    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 ==============================================================================*/
 """
-
 import os
 
 import numpy as np
@@ -39,7 +38,12 @@ def generate_facility_location_instance(n_f: int, n_c: int, file_path: str):
             np.savetxt(f, line, fmt='%.10f', delimiter=',')
 
 
-if __name__ == '__main__':
+def main() -> None:
+    """
+    Main function.
+
+    :return: None
+    """
     facilitylocation_folder_path = f'../data/private/FacilityLocation/'
     if not os.path.exists(facilitylocation_folder_path):
         os.makedirs(facilitylocation_folder_path, exist_ok=True)
@@ -50,7 +54,11 @@ if __name__ == '__main__':
         if not os.path.exists(facilitylocation_n_folder_path):
             os.makedirs(facilitylocation_n_folder_path, exist_ok=True)
 
-        for i in range(1000):
+        for i in range(50):
             file_path = facilitylocation_n_folder_path + f'{i}.csv'
             if not os.path.exists(file_path):
-                generate_facility_location_instance(n, 1 + (i // 50), file_path)
+                generate_facility_location_instance(n, i+3, file_path)
+
+
+if __name__ == '__main__':
+    main()

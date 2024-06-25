@@ -1,4 +1,4 @@
-/* CCSMSM solver, that solves the Cardinality-Constrained Submodular Monotone
+/* SubModST solver, that solves the Cardinality-Constrained Submodular Monotone
    Subset Maximization problem.
    Copyright (C) 2024  Henning Woydt
 
@@ -16,8 +16,8 @@
    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 ==============================================================================*/
 
-#ifndef CCSMSM_CLUSTERING_H
-#define CCSMSM_CLUSTERING_H
+#ifndef SUBMODST_CLUSTERING_H
+#define SUBMODST_CLUSTERING_H
 
 #include <cstddef>
 #include <vector>
@@ -28,7 +28,7 @@
 #include "../util/utility.h"
 #include "Matrix.h"
 
-namespace CCSMSM {
+namespace SubModST {
     /**
      * Class for defining a clustering instance (set of vectors).
      */
@@ -54,7 +54,7 @@ namespace CCSMSM {
          * @return The set of datapoints.
          */
         explicit Clustering(const std::string &file_path) {
-            if (!CCSMSM::file_exists(file_path)) {
+            if (!SubModST::file_exists(file_path)) {
                 std::cout << "File " << file_path << " was not found!\n";
                 exit(EXIT_FAILURE);
             }
@@ -140,4 +140,4 @@ namespace CCSMSM {
     };
 }
 
-#endif //CCSMSM_CLUSTERING_H
+#endif //SUBMODST_CLUSTERING_H

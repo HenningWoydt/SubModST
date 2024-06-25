@@ -1,4 +1,4 @@
-/* CCSMSM solver, that solves the Cardinality-Constrained Submodular Monotone
+/* SubModST solver, that solves the Cardinality-Constrained Submodular Monotone
    Subset Maximization problem.
    Copyright (C) 2024  Henning Woydt
 
@@ -30,7 +30,7 @@
 #include "../src/structures/FacilityLocation.h"
 #include "../src/structures/WeightedCoverage.h"
 
-namespace CCSMSM {
+namespace SubModST {
     /**
      * Checks the found sets of the algorithm.
      *

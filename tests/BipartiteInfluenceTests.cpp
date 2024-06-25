@@ -1,4 +1,4 @@
-/* CCSMSM solver, that solves the Cardinality-Constrained Submodular Monotone
+/* SubModST solver, that solves the Cardinality-Constrained Submodular Monotone
    Subset Maximization problem.
    Copyright (C) 2024  Henning Woydt
 
@@ -28,7 +28,7 @@
 #include "../src/util/utility.h"
 #include "../src/structures/BipartiteInfluence.h"
 
-namespace CCSMSM {
+namespace SubModST {
 
     void test_BFSolverVsSolver_BipartiteInfluence([[maybe_unused]] std::string &data_file_path, [[maybe_unused]] std::string &sol_dir_path) {
         auto bipartiteInfluence = BipartiteInfluence<double>(data_file_path);

@@ -1,5 +1,5 @@
 """
-/* CCSMSM solver, that solves the Cardinality-Constrained Submodular Monotone
+/* SubModST solver, that solves the Cardinality-Constrained Submodular Monotone
    Subset Maximization problem.
    Copyright (C) 2024  Henning Woydt
 
@@ -17,7 +17,6 @@
    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 ==============================================================================*/
 """
-
 import os
 
 import numpy as np
@@ -43,7 +42,12 @@ def generate_graph(n: int, file_path: str):
     nx.write_edgelist(graph, file_path, data=False)
 
 
-if __name__ == '__main__':
+def main() -> None:
+    """
+    Main function.
+
+    :return: None
+    """
     graph_folder_path = f'../data/private/Graph/'
     if not os.path.exists(graph_folder_path):
         os.makedirs(graph_folder_path, exist_ok=True)
@@ -54,7 +58,11 @@ if __name__ == '__main__':
         if not os.path.exists(graph_n_folder_path):
             os.makedirs(graph_n_folder_path, exist_ok=True)
 
-        for i in range(1000):
+        for i in range(50):
             file_path = graph_n_folder_path + f'{i}.edges'
             if not os.path.exists(file_path):
                 generate_graph(n, file_path)
+
+
+if __name__ == '__main__':
+    main()

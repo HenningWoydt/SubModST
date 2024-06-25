@@ -44,14 +44,7 @@ This script will automatically download and extract the files to the correct fol
 At the end the folder `blossom5` should contain the downloaded code.
 
 ### Build
-To build the binary use
-
-```
-cmake -G 'Unix Makefiles' -DCMAKE_BUILD_TYPE=Release -S . -B ./build
-cmake --build build --target CCSMSM
-```
-
-The binary `CCSMSM` will be in the folder `build`.
+To build the binary use `./build.sh`. The binary `submodst` will be in the folder `build`.
 
 ## Usage
 
@@ -67,7 +60,7 @@ Use the following options:
 
 ## Data
 
-The folder `utility` contains scripts to generate test data and download most of the benchmark data.
+The folder `data` contains scripts to generate test data and download most of the benchmark data.
 
 #### Graph
 
@@ -121,3 +114,7 @@ GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007
 ## Project status
 
 Active development.
+
+## Reference
+
+TO be added

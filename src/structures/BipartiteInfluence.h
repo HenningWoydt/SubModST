@@ -1,4 +1,4 @@
-/* CCSMSM solver, that solves the Cardinality-Constrained Submodular Monotone
+/* SubModST solver, that solves the Cardinality-Constrained Submodular Monotone
    Subset Maximization problem.
    Copyright (C) 2024  Henning Woydt
 
@@ -16,13 +16,13 @@
    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 ==============================================================================*/
 
-#ifndef CCSMSM_BIPARTITEINFLUENCE_H
-#define CCSMSM_BIPARTITEINFLUENCE_H
+#ifndef SUBMODST_BIPARTITEINFLUENCE_H
+#define SUBMODST_BIPARTITEINFLUENCE_H
 
 #include <string>
 #include <cmath>
 
-namespace CCSMSM {
+namespace SubModST {
     template<typename SFType>
     class BipartiteInfluence final : public StructureInterface<SFType> {
     private:
@@ -45,7 +45,7 @@ namespace CCSMSM {
          * @return The set of datapoints.
          */
         explicit BipartiteInfluence(std::string &file_path) {
-            if (!CCSMSM::file_exists(file_path)) {
+            if (!SubModST::file_exists(file_path)) {
                 std::cout << "File " << file_path << " was not found!\n";
                 exit(EXIT_FAILURE);
             }
@@ -83,7 +83,7 @@ namespace CCSMSM {
 
         void print() {
             for (auto &vec: m_targets) {
-                ::CCSMSM::print(vec, vec.size());
+                ::SubModST::print(vec, vec.size());
             }
         }
 
@@ -163,4 +163,4 @@ namespace CCSMSM {
     };
 }
 
-#endif //CCSMSM_BIPARTITEINFLUENCE_H
+#endif //SUBMODST_BIPARTITEINFLUENCE_H

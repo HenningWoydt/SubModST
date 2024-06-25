@@ -18,34 +18,7 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 # ==============================================================================*/
 
-ROOT=${PWD}
-
-function get_num_cores {
-  grep -c ^processor /proc/cpuinfo;
-}
-
-# update all submodules
-git submodule update --init --recursive
-
-# setup 3rd party
-cd extern
-./setup_3rd_party.sh
-cd ${ROOT}
-
-# make directory
-mkdir build
-cd build
-
-# build
-cmake .. -DCMAKE_BUILD_TYPE=Release && cd ${ROOT}
-cmake --build build --parallel "$(get_num_cores)" --target submodst
-cmake --build build --parallel "$(get_num_cores)" --target submodst_gtest
-cd ${ROOT}
-
-# create test data
-cd data && ./generate_all.sh
-cd ${ROOT}
-
-# run tests
-cd build
-./submodst_gtest
+python3 crawl_graph.py
+python3 crawl_COV_LOC_INF.py
+python3 crawl_clustering.py
+python3 crawl_INF_csokas.py

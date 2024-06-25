@@ -1,5 +1,5 @@
 """
-/* CCSMSM solver, that solves the Cardinality-Constrained Submodular Monotone
+/* SubModST solver, that solves the Cardinality-Constrained Submodular Monotone
    Subset Maximization problem.
    Copyright (C) 2024  Henning Woydt
 
@@ -22,8 +22,8 @@ import os
 
 import numpy as np
 
-RAW_FOLDER_PATH = "../data/raw/INF_new_data_ALL"
-INF_FOLDER_PATH = "../data/BipartiteInfluence"
+RAW_FOLDER_PATH = "raw/INF_new_data_ALL"
+INF_FOLDER_PATH = "BipartiteInfluence"
 
 
 def reformat(file_path: str):

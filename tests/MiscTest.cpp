@@ -1,4 +1,4 @@
-/* CCSMSM solver, that solves the Cardinality-Constrained Submodular Monotone
+/* SubModST solver, that solves the Cardinality-Constrained Submodular Monotone
    Subset Maximization problem.
    Copyright (C) 2024  Henning Woydt
 
@@ -27,7 +27,7 @@
 #include "../src/structures/Matrix.h"
 #include "../src/util/utility.h"
 
-namespace CCSMSM {
+namespace SubModST {
 
     TEST(DataTest, GroupClosenessCentralityTest) {
         return;
@@ -36,8 +36,8 @@ namespace CCSMSM {
 
         std::vector<std::string> files = get_directory_files(data_dir_path, extension);
         for (std::string &file: files) {
-            CCSMSM::Graph graph(file);
-            CCSMSM::Matrix<int> mtx = graph.get_GroupClosenessCentralityMatrix();
+            SubModST::Graph graph(file);
+            SubModST::Matrix<int> mtx = graph.get_GroupClosenessCentralityMatrix();
 
             for (size_t i = 0; i < mtx.get_n(); ++i) {
                 for (size_t j = 0; j < mtx.get_n(); ++j) {

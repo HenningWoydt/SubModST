@@ -18,34 +18,10 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 # ==============================================================================*/
 
-ROOT=${PWD}
+rm -rf blossom5
+rm -rf blossom5.tar.gz
+wget https://pub.ista.ac.at/~vnk/software/blossom5-v2.05.src.tar.gz -O blossom5.tar.gz
+tar -xf blossom5.tar.gz
+mv blossom5-v2.05.src blossom5
 
-function get_num_cores {
-  grep -c ^processor /proc/cpuinfo;
-}
-
-# update all submodules
-git submodule update --init --recursive
-
-# setup 3rd party
-cd extern
-./setup_3rd_party.sh
-cd ${ROOT}
-
-# make directory
-mkdir build
-cd build
-
-# build
-cmake .. -DCMAKE_BUILD_TYPE=Release && cd ${ROOT}
-cmake --build build --parallel "$(get_num_cores)" --target submodst
-cmake --build build --parallel "$(get_num_cores)" --target submodst_gtest
-cd ${ROOT}
-
-# create test data
-cd data && ./generate_all.sh
-cd ${ROOT}
-
-# run tests
-cd build
-./submodst_gtest
+sed -i '40s/.*/#define PERFECT_MATCHING_DOUBLE/' blossom5/PerfectMatching.h

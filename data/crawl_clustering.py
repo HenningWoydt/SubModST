@@ -1,5 +1,5 @@
 """
-/* CCSMSM solver, that solves the Cardinality-Constrained Submodular Monotone
+/* SubModST solver, that solves the Cardinality-Constrained Submodular Monotone
    Subset Maximization problem.
    Copyright (C) 2024  Henning Woydt
 
@@ -42,8 +42,8 @@ URLS = [
     "https://cs.uef.fi/sipu/datasets/skewed.txt"
 ]
 
-RAW_FOLDER_PATH = "../data/raw/cs.uef.fi/"
-FOLDER_PATH = "../data/Clustering/"
+RAW_FOLDER_PATH = "raw/cs.uef.fi/"
+FOLDER_PATH = "Clustering/"
 
 
 def crawl_data():

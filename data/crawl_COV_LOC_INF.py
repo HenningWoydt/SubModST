@@ -1,5 +1,5 @@
 """
-/* CCSMSM solver, that solves the Cardinality-Constrained Submodular Monotone
+/* SubModST solver, that solves the Cardinality-Constrained Submodular Monotone
    Subset Maximization problem.
    Copyright (C) 2024  Henning Woydt
 
@@ -25,10 +25,10 @@ import zipfile
 
 import requests
 
-RAW_FOLDER_PATH = "../data/raw/COV-INF-LOC"
-COV_FOLDER_PATH = "../data/WeightedCoverage"
-LOC_FOLDER_PATH = "../data/FacilityLocation"
-INF_FOLDER_PATH = "../data/BipartiteInfluence"
+RAW_FOLDER_PATH = "raw/COV-INF-LOC"
+COV_FOLDER_PATH = "WeightedCoverage"
+LOC_FOLDER_PATH = "FacilityLocation"
+INF_FOLDER_PATH = "BipartiteInfluence"
 
 if __name__ == '__main__':
     # create directories

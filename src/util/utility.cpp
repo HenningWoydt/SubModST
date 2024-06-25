@@ -1,4 +1,4 @@
-/* CCSMSM solver, that solves the Cardinality-Constrained Submodular Monotone
+/* SubModST solver, that solves the Cardinality-Constrained Submodular Monotone
    Subset Maximization problem.
    Copyright (C) 2024  Henning Woydt
 
@@ -18,7 +18,7 @@
 
 #include "utility.h"
 
-std::vector<uint32_t> CCSMSM::read_solution(const std::string &file_path) {
+std::vector<uint32_t> SubModST::read_solution(const std::string &file_path) {
     std::vector<uint32_t> vec;
 
     std::ifstream file(file_path);
@@ -37,7 +37,7 @@ std::vector<uint32_t> CCSMSM::read_solution(const std::string &file_path) {
     return vec;
 }
 
-void CCSMSM::write_solution(std::vector<uint32_t> &solution, std::string &file_path) {
+void SubModST::write_solution(std::vector<uint32_t> &solution, std::string &file_path) {
     std::ofstream file(file_path);
 
     if (file.is_open()) {
@@ -50,7 +50,7 @@ void CCSMSM::write_solution(std::vector<uint32_t> &solution, std::string &file_p
     }
 }
 
-std::vector<std::string> CCSMSM::get_directory_files(std::string &directory_path) {
+std::vector<std::string> SubModST::get_directory_files(std::string &directory_path) {
     std::vector<std::string> paths;
     for (const auto &entry: std::filesystem::directory_iterator(directory_path)) {
         paths.push_back(entry.path().string());
@@ -59,7 +59,7 @@ std::vector<std::string> CCSMSM::get_directory_files(std::string &directory_path
     return paths;
 }
 
-std::vector<std::string> CCSMSM::get_directory_files(std::string &directory_path, std::string &extension) {
+std::vector<std::string> SubModST::get_directory_files(std::string &directory_path, std::string &extension) {
     std::vector<std::string> paths;
     for (const auto &entry: std::filesystem::directory_iterator(directory_path)) {
         if (entry.path().extension() == extension) {
@@ -70,7 +70,7 @@ std::vector<std::string> CCSMSM::get_directory_files(std::string &directory_path
     return paths;
 }
 
-std::vector<std::string> CCSMSM::get_directory_files(std::string &&directory_path, std::string &&extension) {
+std::vector<std::string> SubModST::get_directory_files(std::string &&directory_path, std::string &&extension) {
     std::filesystem::create_directories(directory_path);
     std::vector<std::string> paths;
     for (const auto &entry: std::filesystem::directory_iterator(directory_path)) {
@@ -82,14 +82,14 @@ std::vector<std::string> CCSMSM::get_directory_files(std::string &&directory_pat
     return paths;
 }
 
-size_t CCSMSM::n_choose_k(size_t n, size_t k) {
+size_t SubModST::n_choose_k(size_t n, size_t k) {
     if (k == 0) {
         return 1;
     }
     return (n * n_choose_k(n - 1, k - 1)) / k;
 }
 
-bool CCSMSM::next_subset(std::vector<size_t> &set, size_t set_size, size_t n) {
+bool SubModST::next_subset(std::vector<size_t> &set, size_t set_size, size_t n) {
     set[set_size - 1] += 1;
     if (set[set_size - 1] < n - 1) {
         return true;
@@ -112,8 +112,8 @@ bool CCSMSM::next_subset(std::vector<size_t> &set, size_t set_size, size_t n) {
     return set[0] <= n - set_size;
 }
 
-std::vector<CCSMSM::AlgorithmConfiguration> CCSMSM::get_all_acs() {
-    std::vector<CCSMSM::AlgorithmConfiguration> acs;
+std::vector<SubModST::AlgorithmConfiguration> SubModST::get_all_acs() {
+    std::vector<SubModST::AlgorithmConfiguration> acs;
 
     acs = {
             // AlgorithmConfiguration("Plain"),
@@ -134,7 +134,7 @@ std::vector<CCSMSM::AlgorithmConfiguration> CCSMSM::get_all_acs() {
     return acs;
 }
 
-void CCSMSM::write_to_file(std::string &file_path, std::string &content) {
+void SubModST::write_to_file(std::string &file_path, std::string &content) {
     // Open the file for writing
     std::ofstream file(file_path);
 
@@ -150,7 +150,7 @@ void CCSMSM::write_to_file(std::string &file_path, std::string &content) {
     }
 }
 
-std::vector<std::string> CCSMSM::split(const std::string &s, char c) {
+std::vector<std::string> SubModST::split(const std::string &s, char c) {
     std::vector<std::string> result;
     std::string token;
     std::istringstream iss(s);

@@ -1,4 +1,4 @@
-/* CCSMSM solver, that solves the Cardinality-Constrained Submodular Monotone
+/* SubModST solver, that solves the Cardinality-Constrained Submodular Monotone
    Subset Maximization problem.
    Copyright (C) 2024  Henning Woydt
 
@@ -16,8 +16,8 @@
    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 ==============================================================================*/
 
-#ifndef CCSMSM_STATISTICPROFILER_H
-#define CCSMSM_STATISTICPROFILER_H
+#ifndef SUBMODST_STATISTICPROFILER_H
+#define SUBMODST_STATISTICPROFILER_H
 
 #include <cstddef>
 #include <vector>
@@ -28,7 +28,7 @@
 
 #define STAT_PROFILER_ENABLED 1
 
-namespace CCSMSM {
+namespace SubModST {
 
     /**
      * Class to track statistics of the solver.
@@ -118,10 +118,10 @@ namespace CCSMSM {
             std::stringstream ss;
             ss << "{";
 #if STAT_PROFILER_ENABLED
-            ss << "\"recursive-calls-per-depth\": " << CCSMSM::to_JSON(m_recursive_calls_per_depth) << ",\n";
+            ss << "\"recursive-calls-per-depth\": " << SubModST::to_JSON(m_recursive_calls_per_depth) << ",\n";
 
-            ss << "\"history-time\": " << CCSMSM::to_JSON(history_time) << ",\n";
-            ss << "\"history-score\": " << CCSMSM::to_JSON(history_score) << ",\n";
+            ss << "\"history-time\": " << SubModST::to_JSON(history_time) << ",\n";
+            ss << "\"history-score\": " << SubModST::to_JSON(history_score) << ",\n";
 
             ss << "\"PUB-total\": " << PUB_total << ",\n";
             ss << "\"PUB-success\": " << PUB_success << ",\n";
@@ -138,4 +138,4 @@ namespace CCSMSM {
 
 }
 
-#endif //CCSMSM_STATISTICPROFILER_H
+#endif //SUBMODST_STATISTICPROFILER_H

@@ -1,4 +1,4 @@
-/* CCSMSM solver, that solves the Cardinality-Constrained Submodular Monotone
+/* SubModST solver, that solves the Cardinality-Constrained Submodular Monotone
    Subset Maximization problem.
    Copyright (C) 2024  Henning Woydt
 
@@ -28,7 +28,7 @@
 #include "../src/util/utility.h"
 #include "../src/structures/FacilityLocation.h"
 
-namespace CCSMSM {
+namespace SubModST {
     void test_BFSolverVsSolver_FacilityLocation(std::string &data_file_path, std::string &sol_dir_path) {
         auto facilityLocation = FacilityLocation(data_file_path);
         Matrix<double> mtx = facilityLocation.get_FacilityLocationMatrix();

@@ -1,4 +1,4 @@
-/* CCSMSM solver, that solves the Cardinality-Constrained Submodular Monotone
+/* SubModST solver, that solves the Cardinality-Constrained Submodular Monotone
    Subset Maximization problem.
    Copyright (C) 2024  Henning Woydt
 
@@ -16,8 +16,8 @@
    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 ==============================================================================*/
 
-#ifndef CCSMSM_FACILITYLOCATION_H
-#define CCSMSM_FACILITYLOCATION_H
+#ifndef SUBMODST_FACILITYLOCATION_H
+#define SUBMODST_FACILITYLOCATION_H
 
 #include <cstddef>
 #include <vector>
@@ -26,7 +26,7 @@
 #include "../util/utility.h"
 #include "Matrix.h"
 
-namespace CCSMSM {
+namespace SubModST {
     /**
      * Class for defining the Facility Location problem.
      */
@@ -52,7 +52,7 @@ namespace CCSMSM {
          * @return The set of datapoints.
          */
         explicit FacilityLocation(const std::string &file_path) {
-            if (!CCSMSM::file_exists(file_path)) {
+            if (!SubModST::file_exists(file_path)) {
                 std::cout << "File " << file_path << " was not found!\n";
                 exit(EXIT_FAILURE);
             }
@@ -100,4 +100,4 @@ namespace CCSMSM {
     };
 }
 
-#endif //CCSMSM_FACILITYLOCATION_H
+#endif //SUBMODST_FACILITYLOCATION_H

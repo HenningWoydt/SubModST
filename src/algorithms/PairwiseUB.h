@@ -1,4 +1,4 @@
-/* CCSMSM solver, that solves the Cardinality-Constrained Submodular Monotone
+/* SubModST solver, that solves the Cardinality-Constrained Submodular Monotone
    Subset Maximization problem.
    Copyright (C) 2024  Henning Woydt
 
@@ -16,8 +16,8 @@
    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 ==============================================================================*/
 
-#ifndef CCSMSM_PAIRWISEUB_H
-#define CCSMSM_PAIRWISEUB_H
+#ifndef SUBMODST_PAIRWISEUB_H
+#define SUBMODST_PAIRWISEUB_H
 
 #include <cstddef>
 #include <vector>
@@ -26,9 +26,9 @@
 
 #include "Cache.h"
 #include "../util/utility.h"
-#include "../3rd_party/blossom5/PerfectMatching.h"
+#include "../../extern/blossom5/PerfectMatching.h"
 
-namespace CCSMSM {
+namespace SubModST {
 
     /**
      * Returns upper bounds based on 2D marginal gains.
@@ -345,4 +345,4 @@ namespace CCSMSM {
     };
 }
 
-#endif //CCSMSM_PAIRWISEUB_H
+#endif //SUBMODST_PAIRWISEUB_H

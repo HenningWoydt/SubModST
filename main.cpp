@@ -28,60 +28,60 @@
 
 int main(int argc, char *argv[]) {
 
-    CCSMSM::AlgorithmConfiguration ac(argc, argv);
+    SubModST::AlgorithmConfiguration ac(argc, argv);
 
     if (ac.function == "PartialDominatingSet") {
-        auto graph = CCSMSM::Graph(ac.input_file_path);
-        CCSMSM::Matrix<int> mtx = graph.get_PartialDominatingSetMatrix();
-        auto solver = CCSMSM::Solver<CCSMSM::Matrix<int>, int>(mtx, ac.k, ac);
+        auto graph = SubModST::Graph(ac.input_file_path);
+        SubModST::Matrix<int> mtx = graph.get_PartialDominatingSetMatrix();
+        auto solver = SubModST::Solver<SubModST::Matrix<int>, int>(mtx, ac.k, ac);
         solver.search();
         solver.write_output(ac.output_file_path);
 
     } else if (ac.function == "GroupClosenessCentrality") {
-        auto graph = CCSMSM::Graph(ac.input_file_path);
-        CCSMSM::Matrix<int> mtx = graph.get_GroupClosenessCentralityMatrix();
-        auto solver = CCSMSM::Solver<CCSMSM::Matrix<int>, int>(mtx, ac.k, ac);
+        auto graph = SubModST::Graph(ac.input_file_path);
+        SubModST::Matrix<int> mtx = graph.get_GroupClosenessCentralityMatrix();
+        auto solver = SubModST::Solver<SubModST::Matrix<int>, int>(mtx, ac.k, ac);
         solver.search();
         solver.write_output(ac.output_file_path);
 
     } else if (ac.function == "PartialVertexSet") {
-        auto graph = CCSMSM::Graph(ac.input_file_path);
-        CCSMSM::Matrix<int> mtx = graph.get_PartialVertexSetMatrix();
-        auto solver = CCSMSM::Solver<CCSMSM::Matrix<int>, int>(mtx, ac.k, ac);
+        auto graph = SubModST::Graph(ac.input_file_path);
+        SubModST::Matrix<int> mtx = graph.get_PartialVertexSetMatrix();
+        auto solver = SubModST::Solver<SubModST::Matrix<int>, int>(mtx, ac.k, ac);
         solver.search();
         solver.write_output(ac.output_file_path);
 
     } else if (ac.function == "EuclidianClustering") {
-        auto dataPoints = CCSMSM::Clustering(ac.input_file_path);
-        CCSMSM::Matrix<double> mtx = dataPoints.get_EuclidianClusteringMatrix();
-        auto solver = CCSMSM::Solver<CCSMSM::Matrix<double>, double>(mtx, ac.k, ac);
+        auto dataPoints = SubModST::Clustering(ac.input_file_path);
+        SubModST::Matrix<double> mtx = dataPoints.get_EuclidianClusteringMatrix();
+        auto solver = SubModST::Solver<SubModST::Matrix<double>, double>(mtx, ac.k, ac);
         solver.search();
         solver.write_output(ac.output_file_path);
 
     } else if (ac.function == "ManhattanClustering") {
-        auto dataPoints = CCSMSM::Clustering(ac.input_file_path);
-        CCSMSM::Matrix<double> mtx = dataPoints.get_ManhattanClusteringMatrix();
-        auto solver = CCSMSM::Solver<CCSMSM::Matrix<double>, double>(mtx, ac.k, ac);
+        auto dataPoints = SubModST::Clustering(ac.input_file_path);
+        SubModST::Matrix<double> mtx = dataPoints.get_ManhattanClusteringMatrix();
+        auto solver = SubModST::Solver<SubModST::Matrix<double>, double>(mtx, ac.k, ac);
         solver.search();
         solver.write_output(ac.output_file_path);
 
     } else if (ac.function == "FacilityLocation") {
-        auto facilityLocation = CCSMSM::FacilityLocation(ac.input_file_path);
-        CCSMSM::Matrix<double> mtx = facilityLocation.get_FacilityLocationMatrix();
-        auto solver = CCSMSM::Solver<CCSMSM::Matrix<double>, double>(mtx, ac.k, ac);
+        auto facilityLocation = SubModST::FacilityLocation(ac.input_file_path);
+        SubModST::Matrix<double> mtx = facilityLocation.get_FacilityLocationMatrix();
+        auto solver = SubModST::Solver<SubModST::Matrix<double>, double>(mtx, ac.k, ac);
         solver.search();
         solver.write_output(ac.output_file_path);
 
     } else if (ac.function == "WeightedCoverage") {
-        auto weightedCoverage = CCSMSM::WeightedCoverage(ac.input_file_path);
-        CCSMSM::Matrix<double> mtx = weightedCoverage.get_WeightedCoverageMatrix();
-        auto solver = CCSMSM::Solver<CCSMSM::Matrix<double>, double>(mtx, ac.k, ac);
+        auto weightedCoverage = SubModST::WeightedCoverage(ac.input_file_path);
+        SubModST::Matrix<double> mtx = weightedCoverage.get_WeightedCoverageMatrix();
+        auto solver = SubModST::Solver<SubModST::Matrix<double>, double>(mtx, ac.k, ac);
         solver.search();
         solver.write_output(ac.output_file_path);
 
     } else if (ac.function == "BipartiteInfluence") {
-        auto bipartiteInfluence = CCSMSM::BipartiteInfluence<double>(ac.input_file_path);
-        auto solver = CCSMSM::Solver<CCSMSM::BipartiteInfluence<double>, double>(bipartiteInfluence, ac.k, ac);
+        auto bipartiteInfluence = SubModST::BipartiteInfluence<double>(ac.input_file_path);
+        auto solver = SubModST::Solver<SubModST::BipartiteInfluence<double>, double>(bipartiteInfluence, ac.k, ac);
         solver.search();
         solver.write_output(ac.output_file_path);
 

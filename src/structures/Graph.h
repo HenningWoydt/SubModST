@@ -1,4 +1,4 @@
-/* CCSMSM solver, that solves the Cardinality-Constrained Submodular Monotone
+/* SubModST solver, that solves the Cardinality-Constrained Submodular Monotone
    Subset Maximization problem.
    Copyright (C) 2024  Henning Woydt
 
@@ -16,8 +16,8 @@
    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 ==============================================================================*/
 
-#ifndef CCSMSM_GRAPH_H
-#define CCSMSM_GRAPH_H
+#ifndef SUBMODST_GRAPH_H
+#define SUBMODST_GRAPH_H
 
 #include <string>
 #include <iostream>
@@ -27,7 +27,7 @@
 #include "../util/utility.h"
 #include "Matrix.h"
 
-namespace CCSMSM {
+namespace SubModST {
 
     /**
      * Class for defining a graph.
@@ -53,7 +53,7 @@ namespace CCSMSM {
          * @return The Graph.
          */
         explicit Graph(const std::string &file_path) {
-            if (!CCSMSM::file_exists(file_path)) {
+            if (!SubModST::file_exists(file_path)) {
                 std::cout << "File " << file_path << " was not found!\n";
                 exit(EXIT_FAILURE);
             }
@@ -227,4 +227,4 @@ namespace CCSMSM {
     };
 }
 
-#endif //CCSMSM_GRAPH_H
+#endif //SUBMODST_GRAPH_H

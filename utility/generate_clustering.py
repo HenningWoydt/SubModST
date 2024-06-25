@@ -1,5 +1,5 @@
 """
-/* CCSMSM solver, that solves the Cardinality-Constrained Submodular Monotone
+/* SubModST solver, that solves the Cardinality-Constrained Submodular Monotone
    Subset Maximization problem.
    Copyright (C) 2024  Henning Woydt
 
@@ -17,7 +17,6 @@
    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 ==============================================================================*/
 """
-
 import os
 
 import numpy as np
@@ -39,7 +38,12 @@ def generate_clustering_instance(n: int, d: int, file_path: str):
             np.savetxt(f, line, fmt='%.10f')
 
 
-if __name__ == '__main__':
+def main() -> None:
+    """
+    Main function.
+
+    :return: None
+    """
     clustering_folder_path = f'../data/private/Clustering/'
     if not os.path.exists(clustering_folder_path):
         os.makedirs(clustering_folder_path, exist_ok=True)
@@ -50,7 +54,11 @@ if __name__ == '__main__':
         if not os.path.exists(clustering_n_folder_path):
             os.makedirs(clustering_n_folder_path, exist_ok=True)
 
-        for i in range(1000):
+        for i in range(50):
             file_path = clustering_n_folder_path + f'{i}.mtx'
             if not os.path.exists(file_path):
-                generate_clustering_instance(n, 1 + (i // 50), file_path)
+                generate_clustering_instance(n, i + 3, file_path)
+
+
+if __name__ == '__main__':
+    main()

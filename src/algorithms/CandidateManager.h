@@ -1,4 +1,4 @@
-/* CCSMSM solver, that solves the Cardinality-Constrained Submodular Monotone
+/* SubModST solver, that solves the Cardinality-Constrained Submodular Monotone
    Subset Maximization problem.
    Copyright (C) 2024  Henning Woydt
 
@@ -16,8 +16,8 @@
    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 ==============================================================================*/
 
-#ifndef CCSMSM_CANDIDATEMANAGER_H
-#define CCSMSM_CANDIDATEMANAGER_H
+#ifndef SUBMODST_CANDIDATEMANAGER_H
+#define SUBMODST_CANDIDATEMANAGER_H
 
 #include <cstdint>
 #include <vector>
@@ -25,7 +25,7 @@
 
 #include "../util/utility.h"
 
-namespace CCSMSM {
+namespace SubModST {
     /**
      * Represents a candidate with score improvement and accuracy information.
      *
@@ -228,4 +228,4 @@ namespace CCSMSM {
     };
 }
 
-#endif //CCSMSM_CANDIDATEMANAGER_H
+#endif //SUBMODST_CANDIDATEMANAGER_H

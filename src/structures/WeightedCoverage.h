@@ -1,4 +1,4 @@
-/* CCSMSM solver, that solves the Cardinality-Constrained Submodular Monotone
+/* SubModST solver, that solves the Cardinality-Constrained Submodular Monotone
    Subset Maximization problem.
    Copyright (C) 2024  Henning Woydt
 
@@ -16,8 +16,8 @@
    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 ==============================================================================*/
 
-#ifndef CCSMSM_WEIGHTEDCOVERAGE_H
-#define CCSMSM_WEIGHTEDCOVERAGE_H
+#ifndef SUBMODST_WEIGHTEDCOVERAGE_H
+#define SUBMODST_WEIGHTEDCOVERAGE_H
 
 #include <string>
 #include <vector>
@@ -26,7 +26,7 @@
 #include "../util/utility.h"
 #include "Matrix.h"
 
-namespace CCSMSM {
+namespace SubModST {
     class WeightedCoverage {
     private:
         size_t m_n_items;
@@ -45,7 +45,7 @@ namespace CCSMSM {
          * @param file_path Path to the file.
          */
         explicit WeightedCoverage(std::string &file_path) {
-            if (!CCSMSM::file_exists(file_path)) {
+            if (!SubModST::file_exists(file_path)) {
                 std::cout << "File " << file_path << " was not found!\n";
                 exit(EXIT_FAILURE);
             }
@@ -105,4 +105,4 @@ namespace CCSMSM {
     };
 }
 
-#endif //CCSMSM_WEIGHTEDCOVERAGE_H
+#endif //SUBMODST_WEIGHTEDCOVERAGE_H
