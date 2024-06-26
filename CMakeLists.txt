@@ -24,7 +24,7 @@ list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules)
 project(SubModST CXX)
 set(PROJECT_VENDOR "Henning Woydt")
 set(PROJECT_CONTACT "henning.woydt@informatik.uni-heidelberg.de")
-set(PROJECT_URL "https://github.com/HenningWoydt/MtRecProMap") # TODO: Change
+set(PROJECT_URL "https://github.com/HenningWoydt/SubModST")
 set(PROJECT_DESCRIPTION "SubModST: Solving Cardinality-Constrained Submodular Monotone Subset Maximization problem")
 set(PROJECT_VERSION "1.0.0")
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
