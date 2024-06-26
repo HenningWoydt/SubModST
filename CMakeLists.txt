@@ -29,9 +29,9 @@ set(PROJECT_DESCRIPTION "SubModST: Solving Cardinality-Constrained Submodular Mo
 set(PROJECT_VERSION "1.0.0")
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-set(CMAKE_CXX_STANDARD 17)
 
 # Compiler Flags
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_FLAGS_RELEASE "-O3 -DNDEBUG -finline-functions -fwhole-program -ftree-vectorize -flto -funroll-loops -falign-loops -march=native -Wall -Wextra -pedantic")
 set(CMAKE_CXX_FLAGS_DEBUG "-g3 -O0 -Wall -Wextra -pedantic")
 
@@ -69,5 +69,3 @@ add_executable(submodst_gtest
 
 # Link to Google Test
 target_link_libraries(submodst_gtest gtest gtest_main)
-# include(GoogleTest)
-# gtest_discover_tests(submodst_gtest)
