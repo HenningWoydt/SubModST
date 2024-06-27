@@ -44,7 +44,7 @@ file(GLOB_RECURSE SubModST_Test_SOURCES CONFIGURE_DEPENDS "tests/*.cpp")
 file(GLOB_RECURSE SubModST_Test_HEADERS CONFIGURE_DEPENDS "tests/*.h")
 
 # Find BlossomV files
-file(GLOB blossom5_files "extern/blossom5/*.cpp" "extern/blossom5/*.h" "extern/blossom5/GEOM/*.cpp" "extern/blossom5/GEOM/*.h" "extern/blossom5/MinCost/*.cpp" "extern/blossom5/MinCost/*.h")
+file(GLOB_RECURSE blossom5_files "extern/blossom5/*.cpp" "extern/blossom5/*.h")
 list(FILTER blossom5_files EXCLUDE REGEX "example.cpp")
 
 
