@@ -76,8 +76,8 @@ namespace SubModST {
             }
             file.close();
 
-            m_n_facilities = m_benefits[0].size();
-            m_n_customers = m_benefits.size();
+            m_n_customers = m_benefits[0].size();
+            m_n_facilities = m_benefits.size();
         }
 
         /**
@@ -88,8 +88,8 @@ namespace SubModST {
         inline Matrix<double> get_FacilityLocationMatrix() {
             Matrix<double> mtx(m_n_facilities, m_n_customers);
 
-            for (size_t i = 0; i < m_n_customers; ++i) {
-                for (size_t j = 0; j < m_n_facilities; ++j) {
+            for (size_t i = 0; i < m_n_facilities; ++i) {
+                for (size_t j = 0; j < m_n_customers; ++j) {
                     mtx.set(i, j, m_benefits[i][j]);
                 }
             }
