@@ -67,7 +67,7 @@ namespace SubModST {
 
     TEST(BipartiteInfluenceTest, BipartiteInfluence3) {
         std::string data_dir_path = "../data/private/BipartiteInfluence/3/";
-        std::string extension = ".csv";
+        std::string extension = ".binf";
         std::string sol_dir_path = data_dir_path + "BipartiteInfluence/";
 
         std::filesystem::create_directories(data_dir_path);
@@ -81,7 +81,7 @@ namespace SubModST {
 
     TEST(BipartiteInfluenceTest, BipartiteInfluence4) {
         std::string data_dir_path = "../data/private/BipartiteInfluence/4/";
-        std::string extension = ".csv";
+        std::string extension = ".binf";
         std::string sol_dir_path = data_dir_path + "BipartiteInfluence/";
 
         std::filesystem::create_directories(data_dir_path);
@@ -95,7 +95,7 @@ namespace SubModST {
 
     TEST(BipartiteInfluenceTest, BipartiteInfluence5) {
         std::string data_dir_path = "../data/private/BipartiteInfluence/5/";
-        std::string extension = ".csv";
+        std::string extension = ".binf";
         std::string sol_dir_path = data_dir_path + "BipartiteInfluence/";
 
         std::filesystem::create_directories(data_dir_path);
@@ -109,7 +109,7 @@ namespace SubModST {
 
     TEST(BipartiteInfluenceTest, BipartiteInfluence6) {
         std::string data_dir_path = "../data/private/BipartiteInfluence/6/";
-        std::string extension = ".csv";
+        std::string extension = ".binf";
         std::string sol_dir_path = data_dir_path + "BipartiteInfluence/";
 
         std::filesystem::create_directories(data_dir_path);
@@ -123,7 +123,7 @@ namespace SubModST {
 
     TEST(BipartiteInfluenceTest, BipartiteInfluence7) {
         std::string data_dir_path = "../data/private/BipartiteInfluence/7/";
-        std::string extension = ".csv";
+        std::string extension = ".binf";
         std::string sol_dir_path = data_dir_path + "BipartiteInfluence/";
 
         std::filesystem::create_directories(data_dir_path);
@@ -137,7 +137,7 @@ namespace SubModST {
 
     TEST(BipartiteInfluenceTest, BipartiteInfluence8) {
         std::string data_dir_path = "../data/private/BipartiteInfluence/8/";
-        std::string extension = ".csv";
+        std::string extension = ".binf";
         std::string sol_dir_path = data_dir_path + "BipartiteInfluence/";
 
         std::filesystem::create_directories(data_dir_path);
@@ -151,7 +151,7 @@ namespace SubModST {
 
     TEST(BipartiteInfluenceTest, BipartiteInfluence9) {
         std::string data_dir_path = "../data/private/BipartiteInfluence/9/";
-        std::string extension = ".csv";
+        std::string extension = ".binf";
         std::string sol_dir_path = data_dir_path + "BipartiteInfluence/";
 
         std::filesystem::create_directories(data_dir_path);
@@ -165,7 +165,7 @@ namespace SubModST {
 
     TEST(BipartiteInfluenceTest, BipartiteInfluence10) {
         std::string data_dir_path = "../data/private/BipartiteInfluence/10/";
-        std::string extension = ".csv";
+        std::string extension = ".binf";
         std::string sol_dir_path = data_dir_path + "BipartiteInfluence/";
 
         std::filesystem::create_directories(data_dir_path);
@@ -179,7 +179,7 @@ namespace SubModST {
 
     TEST(BipartiteInfluenceTest, BipartiteInfluence11) {
         std::string data_dir_path = "../data/private/BipartiteInfluence/11/";
-        std::string extension = ".csv";
+        std::string extension = ".binf";
         std::string sol_dir_path = data_dir_path + "BipartiteInfluence/";
 
         std::filesystem::create_directories(data_dir_path);
@@ -193,7 +193,7 @@ namespace SubModST {
 
     TEST(BipartiteInfluenceTest, BipartiteInfluence12) {
         std::string data_dir_path = "../data/private/BipartiteInfluence/12/";
-        std::string extension = ".csv";
+        std::string extension = ".binf";
         std::string sol_dir_path = data_dir_path + "BipartiteInfluence/";
 
         std::filesystem::create_directories(data_dir_path);
@@ -207,7 +207,7 @@ namespace SubModST {
 
     TEST(BipartiteInfluenceTest, BipartiteInfluence13) {
         std::string data_dir_path = "../data/private/BipartiteInfluence/13/";
-        std::string extension = ".csv";
+        std::string extension = ".binf";
         std::string sol_dir_path = data_dir_path + "BipartiteInfluence/";
 
         std::filesystem::create_directories(data_dir_path);
@@ -221,7 +221,7 @@ namespace SubModST {
 
     TEST(BipartiteInfluenceTest, BipartiteInfluence14) {
         std::string data_dir_path = "../data/private/BipartiteInfluence/14/";
-        std::string extension = ".csv";
+        std::string extension = ".binf";
         std::string sol_dir_path = data_dir_path + "BipartiteInfluence/";
 
         std::filesystem::create_directories(data_dir_path);
@@ -235,7 +235,7 @@ namespace SubModST {
 
     TEST(BipartiteInfluenceTest, BipartiteInfluence15) {
         std::string data_dir_path = "../data/private/BipartiteInfluence/15/";
-        std::string extension = ".csv";
+        std::string extension = ".binf";
         std::string sol_dir_path = data_dir_path + "BipartiteInfluence/";
 
         std::filesystem::create_directories(data_dir_path);
@@ -249,7 +249,7 @@ namespace SubModST {
 
     TEST(BipartiteInfluenceTest, BipartiteInfluence16) {
         std::string data_dir_path = "../data/private/BipartiteInfluence/16/";
-        std::string extension = ".csv";
+        std::string extension = ".binf";
         std::string sol_dir_path = data_dir_path + "BipartiteInfluence/";
 
         std::filesystem::create_directories(data_dir_path);
@@ -263,7 +263,7 @@ namespace SubModST {
 
     TEST(BipartiteInfluenceTest, BipartiteInfluence17) {
         std::string data_dir_path = "../data/private/BipartiteInfluence/17/";
-        std::string extension = ".csv";
+        std::string extension = ".binf";
         std::string sol_dir_path = data_dir_path + "BipartiteInfluence/";
 
         std::filesystem::create_directories(data_dir_path);
@@ -277,7 +277,7 @@ namespace SubModST {
 
     TEST(BipartiteInfluenceTest, BipartiteInfluence18) {
         std::string data_dir_path = "../data/private/BipartiteInfluence/18/";
-        std::string extension = ".csv";
+        std::string extension = ".binf";
         std::string sol_dir_path = data_dir_path + "BipartiteInfluence/";
 
         std::filesystem::create_directories(data_dir_path);
@@ -291,7 +291,7 @@ namespace SubModST {
 
     TEST(BipartiteInfluenceTest, BipartiteInfluence19) {
         std::string data_dir_path = "../data/private/BipartiteInfluence/19/";
-        std::string extension = ".csv";
+        std::string extension = ".binf";
         std::string sol_dir_path = data_dir_path + "BipartiteInfluence/";
 
         std::filesystem::create_directories(data_dir_path);
@@ -305,7 +305,7 @@ namespace SubModST {
 
     TEST(BipartiteInfluenceTest, BipartiteInfluence20) {
         std::string data_dir_path = "../data/private/BipartiteInfluence/20/";
-        std::string extension = ".csv";
+        std::string extension = ".binf";
         std::string sol_dir_path = data_dir_path + "BipartiteInfluence/";
 
         std::filesystem::create_directories(data_dir_path);

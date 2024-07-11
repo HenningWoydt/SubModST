@@ -67,7 +67,7 @@ namespace SubModST {
 
     TEST(WeightedCoverageTest, WeightedCoverage3) {
         std::string data_dir_path = "../data/private/WeightedCoverage/3/";
-        std::string extension = ".csv";
+        std::string extension = ".wcov";
         std::string sol_dir_path = data_dir_path + "WeightedCoverage/";
 
         std::filesystem::create_directories(data_dir_path);
@@ -81,7 +81,7 @@ namespace SubModST {
 
     TEST(WeightedCoverageTest, WeightedCoverage4) {
         std::string data_dir_path = "../data/private/WeightedCoverage/4/";
-        std::string extension = ".csv";
+        std::string extension = ".wcov";
         std::string sol_dir_path = data_dir_path + "WeightedCoverage/";
 
         std::filesystem::create_directories(data_dir_path);
@@ -95,7 +95,7 @@ namespace SubModST {
 
     TEST(WeightedCoverageTest, WeightedCoverage5) {
         std::string data_dir_path = "../data/private/WeightedCoverage/5/";
-        std::string extension = ".csv";
+        std::string extension = ".wcov";
         std::string sol_dir_path = data_dir_path + "WeightedCoverage/";
 
         std::filesystem::create_directories(data_dir_path);
@@ -109,7 +109,7 @@ namespace SubModST {
 
     TEST(WeightedCoverageTest, WeightedCoverage6) {
         std::string data_dir_path = "../data/private/WeightedCoverage/6/";
-        std::string extension = ".csv";
+        std::string extension = ".wcov";
         std::string sol_dir_path = data_dir_path + "WeightedCoverage/";
 
         std::filesystem::create_directories(data_dir_path);
@@ -123,7 +123,7 @@ namespace SubModST {
 
     TEST(WeightedCoverageTest, WeightedCoverage7) {
         std::string data_dir_path = "../data/private/WeightedCoverage/7/";
-        std::string extension = ".csv";
+        std::string extension = ".wcov";
         std::string sol_dir_path = data_dir_path + "WeightedCoverage/";
 
         std::filesystem::create_directories(data_dir_path);
@@ -137,7 +137,7 @@ namespace SubModST {
 
     TEST(WeightedCoverageTest, WeightedCoverage8) {
         std::string data_dir_path = "../data/private/WeightedCoverage/8/";
-        std::string extension = ".csv";
+        std::string extension = ".wcov";
         std::string sol_dir_path = data_dir_path + "WeightedCoverage/";
 
         std::filesystem::create_directories(data_dir_path);
@@ -151,7 +151,7 @@ namespace SubModST {
 
     TEST(WeightedCoverageTest, WeightedCoverage9) {
         std::string data_dir_path = "../data/private/WeightedCoverage/9/";
-        std::string extension = ".csv";
+        std::string extension = ".wcov";
         std::string sol_dir_path = data_dir_path + "WeightedCoverage/";
 
         std::filesystem::create_directories(data_dir_path);
@@ -165,7 +165,7 @@ namespace SubModST {
 
     TEST(WeightedCoverageTest, WeightedCoverage10) {
         std::string data_dir_path = "../data/private/WeightedCoverage/10/";
-        std::string extension = ".csv";
+        std::string extension = ".wcov";
         std::string sol_dir_path = data_dir_path + "WeightedCoverage/";
 
         std::filesystem::create_directories(data_dir_path);
@@ -179,7 +179,7 @@ namespace SubModST {
 
     TEST(WeightedCoverageTest, WeightedCoverage11) {
         std::string data_dir_path = "../data/private/WeightedCoverage/11/";
-        std::string extension = ".csv";
+        std::string extension = ".wcov";
         std::string sol_dir_path = data_dir_path + "WeightedCoverage/";
 
         std::filesystem::create_directories(data_dir_path);
@@ -193,7 +193,7 @@ namespace SubModST {
 
     TEST(WeightedCoverageTest, WeightedCoverage12) {
         std::string data_dir_path = "../data/private/WeightedCoverage/12/";
-        std::string extension = ".csv";
+        std::string extension = ".wcov";
         std::string sol_dir_path = data_dir_path + "WeightedCoverage/";
 
         std::filesystem::create_directories(data_dir_path);
@@ -207,7 +207,7 @@ namespace SubModST {
 
     TEST(WeightedCoverageTest, WeightedCoverage13) {
         std::string data_dir_path = "../data/private/WeightedCoverage/13/";
-        std::string extension = ".csv";
+        std::string extension = ".wcov";
         std::string sol_dir_path = data_dir_path + "WeightedCoverage/";
 
         std::filesystem::create_directories(data_dir_path);
@@ -221,7 +221,7 @@ namespace SubModST {
 
     TEST(WeightedCoverageTest, WeightedCoverage14) {
         std::string data_dir_path = "../data/private/WeightedCoverage/14/";
-        std::string extension = ".csv";
+        std::string extension = ".wcov";
         std::string sol_dir_path = data_dir_path + "WeightedCoverage/";
 
         std::filesystem::create_directories(data_dir_path);
@@ -235,7 +235,7 @@ namespace SubModST {
 
     TEST(WeightedCoverageTest, WeightedCoverage15) {
         std::string data_dir_path = "../data/private/WeightedCoverage/15/";
-        std::string extension = ".csv";
+        std::string extension = ".wcov";
         std::string sol_dir_path = data_dir_path + "WeightedCoverage/";
 
         std::filesystem::create_directories(data_dir_path);
@@ -249,7 +249,7 @@ namespace SubModST {
 
     TEST(WeightedCoverageTest, WeightedCoverage16) {
         std::string data_dir_path = "../data/private/WeightedCoverage/16/";
-        std::string extension = ".csv";
+        std::string extension = ".wcov";
         std::string sol_dir_path = data_dir_path + "WeightedCoverage/";
 
         std::filesystem::create_directories(data_dir_path);
@@ -263,7 +263,7 @@ namespace SubModST {
 
     TEST(WeightedCoverageTest, WeightedCoverage17) {
         std::string data_dir_path = "../data/private/WeightedCoverage/17/";
-        std::string extension = ".csv";
+        std::string extension = ".wcov";
         std::string sol_dir_path = data_dir_path + "WeightedCoverage/";
 
         std::filesystem::create_directories(data_dir_path);
@@ -277,7 +277,7 @@ namespace SubModST {
 
     TEST(WeightedCoverageTest, WeightedCoverage18) {
         std::string data_dir_path = "../data/private/WeightedCoverage/18/";
-        std::string extension = ".csv";
+        std::string extension = ".wcov";
         std::string sol_dir_path = data_dir_path + "WeightedCoverage/";
 
         std::filesystem::create_directories(data_dir_path);
@@ -291,7 +291,7 @@ namespace SubModST {
 
     TEST(WeightedCoverageTest, WeightedCoverage19) {
         std::string data_dir_path = "../data/private/WeightedCoverage/19/";
-        std::string extension = ".csv";
+        std::string extension = ".wcov";
         std::string sol_dir_path = data_dir_path + "WeightedCoverage/";
 
         std::filesystem::create_directories(data_dir_path);
@@ -305,7 +305,7 @@ namespace SubModST {
 
     TEST(WeightedCoverageTest, WeightedCoverage20) {
         std::string data_dir_path = "../data/private/WeightedCoverage/20/";
-        std::string extension = ".csv";
+        std::string extension = ".wcov";
         std::string sol_dir_path = data_dir_path + "WeightedCoverage/";
 
         std::filesystem::create_directories(data_dir_path);

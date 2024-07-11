@@ -67,7 +67,7 @@ namespace SubModST {
 
     TEST(FacilityLocationTest, FacilityLocation3) {
         std::string data_dir_path = "../data/private/FacilityLocation/3/";
-        std::string extension = ".csv";
+        std::string extension = ".loc";
         std::string sol_dir_path = data_dir_path + "FacilityLocation/";
 
         std::filesystem::create_directories(data_dir_path);
@@ -81,7 +81,7 @@ namespace SubModST {
 
     TEST(FacilityLocationTest, FacilityLocation4) {
         std::string data_dir_path = "../data/private/FacilityLocation/4/";
-        std::string extension = ".csv";
+        std::string extension = ".loc";
         std::string sol_dir_path = data_dir_path + "FacilityLocation/";
 
         std::filesystem::create_directories(data_dir_path);
@@ -95,7 +95,7 @@ namespace SubModST {
 
     TEST(FacilityLocationTest, FacilityLocation5) {
         std::string data_dir_path = "../data/private/FacilityLocation/5/";
-        std::string extension = ".csv";
+        std::string extension = ".loc";
         std::string sol_dir_path = data_dir_path + "FacilityLocation/";
 
         std::filesystem::create_directories(data_dir_path);
@@ -109,7 +109,7 @@ namespace SubModST {
 
     TEST(FacilityLocationTest, FacilityLocation6) {
         std::string data_dir_path = "../data/private/FacilityLocation/6/";
-        std::string extension = ".csv";
+        std::string extension = ".loc";
         std::string sol_dir_path = data_dir_path + "FacilityLocation/";
 
         std::filesystem::create_directories(data_dir_path);
@@ -123,7 +123,7 @@ namespace SubModST {
 
     TEST(FacilityLocationTest, FacilityLocation7) {
         std::string data_dir_path = "../data/private/FacilityLocation/7/";
-        std::string extension = ".csv";
+        std::string extension = ".loc";
         std::string sol_dir_path = data_dir_path + "FacilityLocation/";
 
         std::filesystem::create_directories(data_dir_path);
@@ -137,7 +137,7 @@ namespace SubModST {
 
     TEST(FacilityLocationTest, FacilityLocation8) {
         std::string data_dir_path = "../data/private/FacilityLocation/8/";
-        std::string extension = ".csv";
+        std::string extension = ".loc";
         std::string sol_dir_path = data_dir_path + "FacilityLocation/";
 
         std::filesystem::create_directories(data_dir_path);
@@ -151,7 +151,7 @@ namespace SubModST {
 
     TEST(FacilityLocationTest, FacilityLocation9) {
         std::string data_dir_path = "../data/private/FacilityLocation/9/";
-        std::string extension = ".csv";
+        std::string extension = ".loc";
         std::string sol_dir_path = data_dir_path + "FacilityLocation/";
 
         std::filesystem::create_directories(data_dir_path);
@@ -165,7 +165,7 @@ namespace SubModST {
 
     TEST(FacilityLocationTest, FacilityLocation10) {
         std::string data_dir_path = "../data/private/FacilityLocation/10/";
-        std::string extension = ".csv";
+        std::string extension = ".loc";
         std::string sol_dir_path = data_dir_path + "FacilityLocation/";
 
         std::filesystem::create_directories(data_dir_path);
@@ -179,7 +179,7 @@ namespace SubModST {
 
     TEST(FacilityLocationTest, FacilityLocation11) {
         std::string data_dir_path = "../data/private/FacilityLocation/11/";
-        std::string extension = ".csv";
+        std::string extension = ".loc";
         std::string sol_dir_path = data_dir_path + "FacilityLocation/";
 
         std::filesystem::create_directories(data_dir_path);
@@ -193,7 +193,7 @@ namespace SubModST {
 
     TEST(FacilityLocationTest, FacilityLocation12) {
         std::string data_dir_path = "../data/private/FacilityLocation/12/";
-        std::string extension = ".csv";
+        std::string extension = ".loc";
         std::string sol_dir_path = data_dir_path + "FacilityLocation/";
 
         std::filesystem::create_directories(data_dir_path);
@@ -207,7 +207,7 @@ namespace SubModST {
 
     TEST(FacilityLocationTest, FacilityLocation13) {
         std::string data_dir_path = "../data/private/FacilityLocation/13/";
-        std::string extension = ".csv";
+        std::string extension = ".loc";
         std::string sol_dir_path = data_dir_path + "FacilityLocation/";
 
         std::filesystem::create_directories(data_dir_path);
@@ -221,7 +221,7 @@ namespace SubModST {
 
     TEST(FacilityLocationTest, FacilityLocation14) {
         std::string data_dir_path = "../data/private/FacilityLocation/14/";
-        std::string extension = ".csv";
+        std::string extension = ".loc";
         std::string sol_dir_path = data_dir_path + "FacilityLocation/";
 
         std::filesystem::create_directories(data_dir_path);
@@ -235,7 +235,7 @@ namespace SubModST {
 
     TEST(FacilityLocationTest, FacilityLocation15) {
         std::string data_dir_path = "../data/private/FacilityLocation/15/";
-        std::string extension = ".csv";
+        std::string extension = ".loc";
         std::string sol_dir_path = data_dir_path + "FacilityLocation/";
 
         std::filesystem::create_directories(data_dir_path);
@@ -249,7 +249,7 @@ namespace SubModST {
 
     TEST(FacilityLocationTest, FacilityLocation16) {
         std::string data_dir_path = "../data/private/FacilityLocation/16/";
-        std::string extension = ".csv";
+        std::string extension = ".loc";
         std::string sol_dir_path = data_dir_path + "FacilityLocation/";
 
         std::filesystem::create_directories(data_dir_path);
@@ -263,7 +263,7 @@ namespace SubModST {
 
     TEST(FacilityLocationTest, FacilityLocation17) {
         std::string data_dir_path = "../data/private/FacilityLocation/17/";
-        std::string extension = ".csv";
+        std::string extension = ".loc";
         std::string sol_dir_path = data_dir_path + "FacilityLocation/";
 
         std::filesystem::create_directories(data_dir_path);
@@ -277,7 +277,7 @@ namespace SubModST {
 
     TEST(FacilityLocationTest, FacilityLocation18) {
         std::string data_dir_path = "../data/private/FacilityLocation/18/";
-        std::string extension = ".csv";
+        std::string extension = ".loc";
         std::string sol_dir_path = data_dir_path + "FacilityLocation/";
 
         std::filesystem::create_directories(data_dir_path);
@@ -291,7 +291,7 @@ namespace SubModST {
 
     TEST(FacilityLocationTest, FacilityLocation19) {
         std::string data_dir_path = "../data/private/FacilityLocation/19/";
-        std::string extension = ".csv";
+        std::string extension = ".loc";
         std::string sol_dir_path = data_dir_path + "FacilityLocation/";
 
         std::filesystem::create_directories(data_dir_path);
@@ -305,7 +305,7 @@ namespace SubModST {
 
     TEST(FacilityLocationTest, FacilityLocation20) {
         std::string data_dir_path = "../data/private/FacilityLocation/20/";
-        std::string extension = ".csv";
+        std::string extension = ".loc";
         std::string sol_dir_path = data_dir_path + "FacilityLocation/";
 
         std::filesystem::create_directories(data_dir_path);
