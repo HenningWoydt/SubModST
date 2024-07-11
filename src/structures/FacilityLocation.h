@@ -23,6 +23,7 @@
 #include <vector>
 #include <string>
 #include <iterator>
+
 #include "../util/utility.h"
 #include "Matrix.h"
 
@@ -67,7 +68,7 @@ namespace SubModST {
                 }
 
                 if (line[0] != '%') {
-                    std::vector<std::string> temp = split(line, ',');
+                    std::vector<std::string> temp = split(line, ' ');
                     std::vector<double> t;
                     for (auto &s: temp) { t.push_back(std::stod(s)); }
                     m_benefits.emplace_back(t);
@@ -87,9 +88,9 @@ namespace SubModST {
         inline Matrix<double> get_FacilityLocationMatrix() {
             Matrix<double> mtx(m_n_facilities, m_n_customers);
 
-            for (size_t i = 0; i < m_n_facilities; ++i) {
-                for (size_t j = 0; j < m_n_customers; ++j) {
-                    mtx.set(i, j, m_benefits[j][i]);
+            for (size_t i = 0; i < m_n_customers; ++i) {
+                for (size_t j = 0; j < m_n_facilities; ++j) {
+                    mtx.set(i, j, m_benefits[i][j]);
                 }
             }
 

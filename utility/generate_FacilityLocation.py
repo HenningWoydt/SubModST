@@ -32,10 +32,10 @@ def generate_facility_location_instance(n_f: int, n_c: int, file_path: str):
     :return: None.
     """
     mtx = np.random.rand(n_f, n_c)
-    mtx = np.matrix(mtx).transpose()
+    mtx = np.matrix(mtx)
     with open(file_path, 'wb') as f:
         for line in mtx:
-            np.savetxt(f, line, fmt='%.10f', delimiter=',')
+            np.savetxt(f, line, fmt='%.10f', delimiter=' ')
 
 
 def main() -> None:
@@ -55,7 +55,7 @@ def main() -> None:
             os.makedirs(facilitylocation_n_folder_path, exist_ok=True)
 
         for i in range(10):
-            file_path = facilitylocation_n_folder_path + f'{i}.csv'
+            file_path = facilitylocation_n_folder_path + f'{i}.loc'
             if not os.path.exists(file_path):
                 generate_facility_location_instance(n, i+3, file_path)
 
