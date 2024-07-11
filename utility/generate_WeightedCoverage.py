@@ -33,11 +33,11 @@ def generate_weighted_coverage_instance(n_s: int, n_i: int, file_path: str):
     """
     weights = np.matrix(np.random.rand(n_i))
     mask = np.random.choice([0, 1], (n_s, n_i), p=[0.85, 0.15])
-    mask = np.matrix(mask).transpose()
+    mask = np.matrix(mask)
     with open(file_path, 'wb') as f:
-        np.savetxt(f, weights, fmt='%.10f', delimiter=',')
+        np.savetxt(f, weights, fmt='%.10f', delimiter=' ')
         for line in mask:
-            np.savetxt(f, line, fmt='%.10f', delimiter=',')
+            np.savetxt(f, line, fmt='%.1f', delimiter=' ')
 
 
 def main() -> None:
@@ -57,7 +57,7 @@ def main() -> None:
             os.makedirs(weightedcoverage_n_folder_path, exist_ok=True)
 
         for i in range(10):
-            file_path = weightedcoverage_n_folder_path + f'{i}.csv'
+            file_path = weightedcoverage_n_folder_path + f'{i}.wcov'
             if not os.path.exists(file_path):
                 generate_weighted_coverage_instance(n, i+3, file_path)
 

@@ -64,14 +64,14 @@ namespace SubModST {
                 }
 
                 if (!weights_read) {
-                    std::vector<std::string> weights_str = split(line, ',');
+                    std::vector<std::string> weights_str = split(line, ' ');
                     for (std::string &s: weights_str) {
                         m_weights.push_back(std::stod(s));
                     }
                     weights_read = true;
                 } else {
                     m_active.emplace_back();
-                    std::vector<std::string> active_str = split(line, ',');
+                    std::vector<std::string> active_str = split(line, ' ');
                     for (std::string &s: active_str) {
                         m_active.back().push_back((int) std::stod(s));
                     }
@@ -79,8 +79,8 @@ namespace SubModST {
             }
             file.close();
 
-            m_n_items = m_active.size();
             m_n_sensors = m_active[0].size();
+            m_n_items = m_active.size();
         }
 
 
@@ -90,11 +90,11 @@ namespace SubModST {
          * @return
          */
         inline Matrix<double> get_WeightedCoverageMatrix() const {
-            Matrix<double> mtx(m_n_sensors, m_n_items);
+            Matrix<double> mtx(m_n_items, m_n_sensors);
 
-            for (size_t i = 0; i < m_n_sensors; ++i) {
-                for (size_t j = 0; j < m_n_items; ++j) {
-                    mtx.set(i, j, m_weights[j] * m_active[j][i]);
+            for (size_t i = 0; i < m_n_items; ++i) {
+                for (size_t j = 0; j < m_n_sensors; ++j) {
+                    mtx.set(i, j, m_weights[j] * m_active[i][j]);
                 }
             }
 

@@ -67,8 +67,6 @@ Use the following options:
 
 ## Data
 
-The folder `data` contains scripts to generate test data and download most of the benchmark data.
-
 #### Graph
 
 The file format should be
@@ -105,17 +103,27 @@ each line denotes one point of the dataset.
 
 The file format should be
 ```
-g11,g21,...,gn1
-g12,g21,...,gn1
+g11 g12 ... g1m
+g21 g22 ... g2m
 ...
-g1m,g2m,...,gnm
+gn1 gn2 ... gnm
 ```
-- Each entry $g_{ij}$ should be a non-negative double value.
+- Each entry $g_{ij}$ should be a non-negative double value for customer $i$ and location $j$.
 - Lines starting with a `%` are comments and will be ignored.
 
 #### Weighted Coverage
 
-- Description To be added
+The file format should be
+```
+w1 w2 ... wm
+b11 b12 ... b1m
+...
+bn1 bn2 ... bnm
+```
+- Each $w_j$ should be non-negative double value, that denotes the weight of item $j$.
+- Each entry $b_{ij}$ should be either 1.0 (item $j$ included in subset $i$) or 0.0 (not included).
+- Lines starting with a `%` are comments and will be ignored.
+
 
 #### Bipartite Influence
 
