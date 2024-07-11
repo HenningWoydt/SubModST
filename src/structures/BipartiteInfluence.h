@@ -59,7 +59,7 @@ namespace SubModST {
                 }
 
                 if (line[0] != '%') {
-                    std::vector<std::string> temp = split(line, ',');
+                    std::vector<std::string> temp = split(line, ' ');
                     std::vector<double> t;
                     for (auto &s: temp) { t.push_back(std::stod(s)); }
                     m_targets.push_back(t);
@@ -67,8 +67,8 @@ namespace SubModST {
             }
             file.close();
 
-            m_n_targets = m_targets.size();
             m_n_items = m_targets[0].size();
+            m_n_targets = m_targets.size();
 
             for (size_t i = 0; i < m_n_targets; ++i) {
                 for (size_t j = 0; j < m_n_items; ++j) {

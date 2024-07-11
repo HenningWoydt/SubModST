@@ -31,12 +31,12 @@ def generate_bipartite_influence_instance(n: int, m: int, file_path: str):
     :param file_path: Path to store the file.
     :return: None.
     """
-    mask = np.random.choice([0, 1], (m, n), p=[0.9, 0.1])
-    benefits = np.random.rand(m, n) * mask
-    benefits = np.matrix(benefits).transpose()
+    mask = np.random.choice([0, 1], (n, m), p=[0.9, 0.1])
+    benefits = np.random.rand(n, m) * mask
+    benefits = np.matrix(benefits)
     with open(file_path, 'wb') as f:
         for line in benefits:
-            np.savetxt(f, line, fmt='%.10f', delimiter=',')
+            np.savetxt(f, line, fmt='%.10f', delimiter=' ')
 
 
 def main() -> None:
@@ -56,9 +56,9 @@ def main() -> None:
             os.makedirs(bipartiteinfluence_n_folder_path, exist_ok=True)
 
         for i in range(10):
-            file_path = bipartiteinfluence_n_folder_path + f'{i}.csv'
+            file_path = bipartiteinfluence_n_folder_path + f'{i}.binf'
             if not os.path.exists(file_path):
-                generate_bipartite_influence_instance(i + 3, n, file_path)
+                generate_bipartite_influence_instance(n, i + 3, file_path)
 
 
 if __name__ == '__main__':

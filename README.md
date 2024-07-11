@@ -127,7 +127,15 @@ bn1 bn2 ... bnm
 
 #### Bipartite Influence
 
-- Description to be added
+The file format should be
+```
+p11 p12 ... p1m
+...
+pn1 pn2 ... pnm
+```
+- Each entry $p_{ij}$ is the edge activation from source $i$ to target $j$. They should be double values in the range $[0, 1]$.
+- Lines starting with a `%` are comments and will be ignored.
+
 
 ## License
 
