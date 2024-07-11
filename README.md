@@ -1,32 +1,39 @@
+
 # Submodular Subset Maximization
 
 This repository contains code to exactly solve the **Cardinality-Constrained Submodular Monotone Subset Maximization** problem.
 
-Given a universe $\mathcal{U}$ consisting of $n$ arbitrary items. Let $f : 2^{\mathcal{U}} \to \mathbb{R}$ be a set function.    
-Let $\Delta(e \mid A) \coloneqq f(A \cup \{e\}) - f(A)$ be the **marginal gain** of $e$.        
-Set function $f$ is **submodular** if for every $A \subseteq B \subseteq \mathcal{U}$ and $e \in \mathcal{U} \setminus B$ it holds that $\Delta(e \mid A) \geq \Delta(e \mid B)$.      
+Given a universe $\mathcal{U}$ consisting of $n$ arbitrary items. Let $f : 2^{\mathcal{U}} \to \mathbb{R}$ be a set function.      
+Let $\Delta(e \mid A) \coloneqq f(A \cup \{e\}) - f(A)$ be the **marginal gain** of $e$.          
+Set function $f$ is **submodular** if for every $A \subseteq B \subseteq \mathcal{U}$ and $e \in \mathcal{U} \setminus B$ it holds that $\Delta(e \mid A) \geq \Delta(e \mid B)$.        
 Set function $f$ is **monotone (increasing)** if for every $A \subseteq \mathcal{U}$ and every $e \in \mathcal{U}$ it holds that $\Delta(e \mid A) \geq 0$.
 
 #### Cardinality-Constrained Submodular Monotone Subset Maximization
 
-Given a submodular and monotone set function $f$ and an integer $k$ determine a set $S$ with $|S| = k$ and      
+Given a submodular and monotone set function $f$ and an integer $k$ determine a set $S$ with $|S| = k$ and        
 $$S = \text{arg}\max_{S' \subseteq \mathcal{U}, |S'| = k} f(S').$$
 
 ## Available Functions
 
 Currently, six functions can be optimized.
 
-- Group Closeness Centrality: Given a graph $G=(V, E)$ determine a set $S \subseteq V$ of size $k$, such that $$f(S) \coloneqq \sum_{v \in V \setminus S} \min_{u \in S} \text{dist}(u, v)$$ is minimal. Since this originally is a minimization problem, we will use Negative Group Farness $-f(S)$ as the function to maximize.
+#### Group Closeness Centrality
+Given a graph $G=(V, E)$ determine a set $S \subseteq V$ of size $k$, such that $$f(S) \coloneqq \sum_{v \in V \setminus S} \min_{u \in S} \text{dist}(u, v)$$ is minimal. Since this originally is a minimization problem, we will use Negative Group Farness $-f(S)$ as the function to maximize.
 
-- Partial Dominating Set: Given a graph $G=(V, E)$ determine a set $S \subseteq V$ of size $k$, such that $$f(S) \coloneqq |\bigcup_{v \in S} N[v]|$$ is maximized. $N[v] = \{v\} \cup \{u \mid \{u, v\} \in E\}$ is the closed neighborhood of $v$.
+#### Partial Dominating Set
+Given a graph $G=(V, E)$ determine a set $S \subseteq V$ of size $k$, such that $$f(S) \coloneqq |\bigcup_{v \in S} N[v]|$$ is maximized. $N[v] = \{v\} \cup \{u \mid \{u, v\} \in E\}$ is the closed neighborhood of $v$.
 
-- $k$-Medoid Clustering: Given a set $X$ consisting of $n$ datapoints, each of dimensionality $d$, determine a set $S \subseteq X$ of size $k$ such that $$f(S) \coloneqq \sum_{i=1}^{n} \min_{x_j \in S} d(x_i, x_j)$$ is minimized. $$d(x, y) = \sqrt{ \sum_{i = 1}^{d} (x_i - y_i)^{2} }$$ is the euclidian distance. Like Group Farness, we will maximize $-f(S)$.
+#### $k$-Medoid Clustering
+Given a set $X$ consisting of $n$ datapoints, each of dimensionality $d$, determine a set $S \subseteq X$ of size $k$ such that $$f(S) \coloneqq \sum_{i=1}^{n} \min_{x_j \in S} d(x_i, x_j)$$ is minimized. $$d(x, y) = \sqrt{ \sum_{i = 1}^{d} (x_i - y_i)^{2} }$$ is the euclidian distance. Like Group Farness, we will maximize $-f(S)$.
 
-- Facility Location: Given a set of $n$ locations $N$ and a set of $m$ customers $M$. By $g_{ij} \geq 0$ we denote the benefit for customer $j$ when building a facility at location $i$. Determine a set $S \subseteq N$ of size $k$, such that $$f(S) = \sum_{j \in M} \max_{i \in S} g_{ij}$$ is maximized.
+#### Facility Location
+Given a set of $n$ locations $N$ and a set of $m$ customers $M$. By $g_{ij} \geq 0$ we denote the benefit for customer $j$ when building a facility at location $i$. Determine a set $S \subseteq N$ of size $k$, such that $$f(S) = \sum_{j \in M} \max_{i \in S} g_{ij}$$ is maximized.
 
-- Weighted Coverage: Description to be added
+#### Weighted Coverage
+Given a collection $N = \{s_1, \ldots, s_n\}$ of subsets of an item set $M = \{1, \ldots, m\}$ and a weight function $\omega: M \to \mathbb{R}$, choose $S \subseteq N$ of size $k$ such that the summed weights are maximized, e.g. $$f(S) = \sum_{i \in \bigcup S} \omega(i). $$
 
-- Bipartite Influence: Description to be added
+#### Bipartite Influence
+Let $N = \{1, \ldots, n\}$ be a set of sources and $M = \{1, \ldots, m\}$ a set of targets. Let $G=(N \cup M, E)$ be a bipartite graph with $E \subseteq N \times M$. Let $0 \leq p_{ij} \leq 1$ be the activation probability of edge $(j, i)$ for target $i \in M$ and source $j \in N$. If the edge does not exist in $G$, then $p_{ij} = 0$. A target $i \in M$ is activated by a set $S \subseteq N$ of source with probability $1 - \prod_{j \in S}(1 - p_{ij})$. Determine a set $S \subseteq N$ of size $k$ that maximizes $$ f(S) = \sum_{i \in M} \Big(1 - \prod_{j \in S}(1 - p_{ij})\Big). $$
 
 ## Installation
 
@@ -34,13 +41,13 @@ Currently, six functions can be optimized.
 
 Komogorv's [Blossom V](https://pub.ista.ac.at/~vnk/software.html#BLOSSOM5) implementation is required.
 
-> Vladimir Kolmogorov. "Blossom V: A new implementation of a minimum
-> cost perfect matching algorithm." In Mathematical Programming
+> Vladimir Kolmogorov. "Blossom V: A new implementation of a minimum  
+> cost perfect matching algorithm." In Mathematical Programming  
 > Computation (MPC), July 2009, 1(1):43-67.
 
-Sadly its redistribution is prohibited, so we offer a script that will automatically download and extract it.
-Move into directory `src/3rd_party/` and execute `setup_3rd_party.sh`.
-This script will automatically download and extract the files to the correct folder.
+Its redistribution is prohibited, so we offer a script that will automatically download and extract it.  
+Move into directory `src/3rd_party/` and execute `setup_3rd_party.sh`.  
+This script will automatically download and extract the files to the correct folder.  
 At the end the folder `blossom5` should contain the downloaded code.
 
 ### Build
@@ -66,12 +73,12 @@ The folder `data` contains scripts to generate test data and download most of th
 
 The file format should be
 
-```
-e11 e12
-e21 e22
-...
-en1 en2
 ```  
+e11 e12  
+e21 e22  
+...  
+en1 en2  
+```
 with `ei1 ei2` denoting edge $i$ of the graph.
 
 - Each $e_{ij}$ should be a positive integer $\geq 0$.
@@ -83,13 +90,12 @@ with `ei1 ei2` denoting edge $i$ of the graph.
 
 The file format should be
 
-```  
-x11 x12 ... x1d  
-x21 x22 ... x2d  
-...  
-xn1 xn2 ... xnd  
-```  
-
+```
+x11 x12 ... x1d
+x21 x22 ... x2d
+...
+xn1 xn2 ... xnd
+```   
 each line denotes one point of the dataset.
 
 - Each $x_{ij}$ should be a double value.
@@ -97,7 +103,15 @@ each line denotes one point of the dataset.
 
 #### Facility Location
 
-- Description To be added
+The file format should be
+```
+g11,g21,...,gn1
+g12,g21,...,gn1
+...
+g1m,g2m,...,gnm
+```
+- Each entry $g_{ij}$ should be a non-negative double value.
+- Lines starting with a `%` are comments and will be ignored.
 
 #### Weighted Coverage
 
@@ -115,6 +129,13 @@ GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007
 
 Active development.
 
+## Bugs, Questions, Comments and Ideas
+
+If any bugs arise, quesions occur, comments want to shared, or ideas discussed, please do not hesitate to contact the current repository owner (henning.woydt@informatik.uni-heidelberg.de) or leave a GitHub Issue or Discussion. Thanks!
+
 ## Reference
 
-TO be added
+If you use this work an any academic work, please cite
+```
+BibTeX to be added!
+```
