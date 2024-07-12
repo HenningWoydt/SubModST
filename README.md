@@ -130,6 +130,7 @@ bn1 bn2 ... bnm
 The file format should be
 ```
 p11 p12 ... p1m
+p21 p22 ... p2m
 ...
 pn1 pn2 ... pnm
 ```
