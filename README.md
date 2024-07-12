@@ -33,7 +33,7 @@ Given a set of $n$ locations $N$ and a set of $m$ customers $M$. By $g_{ij} \geq
 Given a collection $N = \{s_1, \ldots, s_n\}$ of subsets of an item set $M = \{1, \ldots, m\}$ and a weight function $\omega: M \to \mathbb{R}$, choose $S \subseteq N$ of size $k$ such that the summed weights are maximized, e.g. $$f(S) = \sum_{i \in \bigcup S} \omega(i). $$
 
 #### Bipartite Influence
-Let $N = \{1, \ldots, n\}$ be a set of sources and $M = \{1, \ldots, m\}$ a set of targets. Let $G=(N \cup M, E)$ be a bipartite graph with $E \subseteq N \times M$. Let $0 \leq p_{ij} \leq 1$ be the activation probability of edge $(j, i)$ for target $i \in M$ and source $j \in N$. If the edge does not exist in $G$, then $p_{ij} = 0$. A target $i \in M$ is activated by a set $S \subseteq N$ of source with probability $1 - \prod_{j \in S}(1 - p_{ij})$. Determine a set $S \subseteq N$ of size $k$ that maximizes $$ f(S) = \sum_{i \in M} \Big(1 - \prod_{j \in S}(1 - p_{ij})\Big). $$
+Let $N = \{1, \ldots, n\}$ be a set of sources and $M = \{1, \ldots, m\}$ a set of targets. Let $G=(N \cup M, E)$ be a bipartite graph with $E \subseteq N \times M$. Let $0 \leq p_{ij} \leq 1$ be the activation probability of edge $(j, i)$ for target $i \in M$ and source $j \in N$. If the edge does not exist in $G$, then $p_{ij} = 0$. A target $i \in M$ is activated by a set $S \subseteq N$ of source with probability $1 - \prod_{j \in S}(1 - p_{ij})$. Determine a set $S \subseteq N$ of size $k$ that maximizes $$f(S) = \sum_{i \in M} \Big(1 - \prod_{j \in S}(1 - p_{ij})\Big). $$
 
 ## Installation
 
