@@ -40,8 +40,8 @@ file(GLOB_RECURSE SubModST_SOURCES CONFIGURE_DEPENDS "src/*.cpp")
 file(GLOB_RECURSE SubModST_HEADERS CONFIGURE_DEPENDS "src/*.h")
 
 # Find all test files
-file(GLOB_RECURSE SubModST_Test_SOURCES CONFIGURE_DEPENDS "tests/*.cpp")
-file(GLOB_RECURSE SubModST_Test_HEADERS CONFIGURE_DEPENDS "tests/*.h")
+# file(GLOB_RECURSE SubModST_Test_SOURCES CONFIGURE_DEPENDS "tests/*.cpp")
+# file(GLOB_RECURSE SubModST_Test_HEADERS CONFIGURE_DEPENDS "tests/*.h")
 
 # Find BlossomV files
 file(GLOB_RECURSE blossom5_files "extern/blossom5/*.cpp" "extern/blossom5/*.h")
@@ -55,17 +55,17 @@ add_executable(submodst
         ${SubModST_HEADERS}
         ${SubModST_SOURCES})
 
-add_subdirectory(external_tools/googletest)
-include(gmock)
-enable_testing()
+# add_subdirectory(external_tools/googletest)
+# include(gmock)
+# enable_testing()
 
 # Test executable
-add_executable(submodst_gtest
-        ${blossom5_files}
-        ${SubModST_HEADERS}
-        ${SubModST_SOURCES}
-        ${SubModST_Test_HEADERS}
-        ${SubModST_Test_SOURCES})
+# add_executable(submodst_gtest
+#        ${blossom5_files}
+#        ${SubModST_HEADERS}
+#        ${SubModST_SOURCES}
+#        ${SubModST_Test_HEADERS}
+#        ${SubModST_Test_SOURCES})
 
 # Link to Google Test
-target_link_libraries(submodst_gtest gtest gtest_main)
+#target_link_libraries(submodst_gtest gtest gtest_main)

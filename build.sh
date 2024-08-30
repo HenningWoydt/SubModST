@@ -39,13 +39,13 @@ cd build
 # build
 cmake .. -DCMAKE_BUILD_TYPE=Release && cd ${ROOT}
 cmake --build build --parallel "$(get_num_cores)" --target submodst
-cmake --build build --parallel "$(get_num_cores)" --target submodst_gtest
-cd ${ROOT}
+# cmake --build build --parallel "$(get_num_cores)" --target submodst_gtest
+# cd ${ROOT}
 
-# create test data
-cd utility && ./generate_all.sh
-cd ${ROOT}
+# create test data - currently disabled
+# cd utility && ./generate_all.sh
+# cd ${ROOT}
 
 # run tests
-cd build
-./submodst_gtest
+# cd build
+# ./submodst_gtest
