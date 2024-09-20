@@ -148,7 +148,7 @@ Active development.
 
 ## Bugs, Questions, Comments and Ideas
 
-If any bugs arise, quesions occur, comments want to shared, or ideas discussed, please do not hesitate to contact the current repository owner (henning.woydt@informatik.uni-heidelberg.de) or leave a GitHub Issue or Discussion. Thanks!
+If any bugs arise, quesions occur, comments want to be shared, or ideas discussed, please do not hesitate to contact the current repository owner (henning.woydt@informatik.uni-heidelberg.de) or leave a GitHub Issue or Discussion. Thanks!
 
 ## Reference
 
