@@ -5,8 +5,8 @@ This repository contains code to exactly solve the **Cardinality-Constrained Sub
 
 Given a universe $\mathcal{U}$ consisting of $n$ arbitrary items. Let $f : 2^{\mathcal{U}} \to \mathbb{R}$ be a set function.      
 Let $\Delta(e \mid A) \coloneqq f(A \cup \{e\}) - f(A)$ be the **marginal gain** of $e$.          
-Set function $f$ is **submodular** if for every $A \subseteq B \subseteq \mathcal{U}$ and $e \in \mathcal{U} \setminus B$ it holds that $\Delta(e \mid A) \geq \Delta(e \mid B)$.        
-Set function $f$ is **monotone (increasing)** if for every $A \subseteq \mathcal{U}$ and every $e \in \mathcal{U}$ it holds that $\Delta(e \mid A) \geq 0$.
+A set function $f$ is **submodular** if for every $A \subseteq B \subseteq \mathcal{U}$ and $e \in \mathcal{U} \setminus B$ it holds that $\Delta(e \mid A) \geq \Delta(e \mid B)$.        
+A set function $f$ is **monotone (increasing)** if for every $A \subseteq \mathcal{U}$ and every $e \in \mathcal{U}$ it holds that $\Delta(e \mid A) \geq 0$.
 
 #### Cardinality-Constrained Submodular Monotone Subset Maximization
 
@@ -120,7 +120,7 @@ b11 b12 ... b1m
 ...
 bn1 bn2 ... bnm
 ```
-- Each $w_j$ should be non-negative double value, that denotes the weight of item $j$.
+- Each $w_j$ should be a non-negative double value, that denotes the weight of item $j$.
 - Each entry $b_{ij}$ should be either 1.0 (item $j$ included in subset $i$) or 0.0 (not included).
 - Lines starting with a `%` are comments and will be ignored.
 
@@ -148,11 +148,33 @@ Active development.
 
 ## Bugs, Questions, Comments and Ideas
 
-If any bugs arise, quesions occur, comments want to be shared, or ideas discussed, please do not hesitate to contact the current repository owner (henning.woydt@informatik.uni-heidelberg.de) or leave a GitHub Issue or Discussion. Thanks!
+If any bugs arise, questions occur, comments want to be shared, or ideas discussed, please do not hesitate to contact the current repository owner (henning.woydt@informatik.uni-heidelberg.de) or leave a GitHub Issue or Discussion. Thanks!
 
 ## Reference
 
-If you use this work an any academic work, please cite
+If you use this work in any academic work, please cite
 ```
-BibTeX to be added!
+@inproceedings{DBLP:conf/esa/WoydtKS24,
+  author       = {Henning Martin Woydt and
+                  Christian Komusiewicz and
+                  Frank Sommer},
+  editor       = {Timothy Chan and
+                  Johannes Fischer and
+                  John Iacono and
+                  Grzegorz Herman},
+  title        = {SubModST: {A} Fast Generic Solver for Submodular Maximization with
+                  Size Constraints},
+  booktitle    = {32nd Annual European Symposium on Algorithms, {ESA} 2024, September
+                  2-4, 2024, Royal Holloway, London, United Kingdom},
+  series       = {LIPIcs},
+  volume       = {308},
+  pages        = {102:1--102:18},
+  publisher    = {Schloss Dagstuhl - Leibniz-Zentrum f{\"{u}}r Informatik},
+  year         = {2024},
+  url          = {https://doi.org/10.4230/LIPIcs.ESA.2024.102},
+  doi          = {10.4230/LIPICS.ESA.2024.102},
+  timestamp    = {Mon, 23 Sep 2024 12:27:20 +0200},
+  biburl       = {https://dblp.org/rec/conf/esa/WoydtKS24.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org}
+}
 ```
