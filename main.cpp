@@ -25,6 +25,7 @@
 #include "src/structures/FacilityLocation.h"
 #include "src/structures/WeightedCoverage.h"
 #include "src/structures/BipartiteInfluence.h"
+#include "src/structures/CSRGraphPDS.h"
 
 int main(int argc, char *argv[]) {
 
@@ -82,6 +83,12 @@ int main(int argc, char *argv[]) {
     } else if (ac.function == "BipartiteInfluence") {
         auto bipartiteInfluence = SubModST::BipartiteInfluence<double>(ac.input_file_path);
         auto solver = SubModST::Solver<SubModST::BipartiteInfluence<double>, double>(bipartiteInfluence, ac.k, ac);
+        solver.search();
+        solver.write_output(ac.output_file_path);
+
+    } else if (ac.function == "PartialDominatingSetCSR") {
+        auto csr_graph = SubModST::CSRGraphPDS<int>(ac.input_file_path);
+        auto solver    = SubModST::Solver<SubModST::CSRGraphPDS<int>, int>(csr_graph, ac.k, ac);
         solver.search();
         solver.write_output(ac.output_file_path);
 

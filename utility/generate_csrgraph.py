@@ -20,22 +20,34 @@
 import os
 
 import numpy as np
+import networkx as nx
 
 
-def generate_clustering_instance(n: int, d: int, file_path: str):
+def generate_graph(n: int, file_path: str):
     """
     Generates a connected graph and save it to a file.
 
-    :param n: Number of points.
-    :param d: Dimensionality of each point.
+    :param n: Number of nodes.
     :param file_path: Path to store the file.
     :return: None.
     """
-    vecs = np.random.rand(n, d)
-    vecs = np.matrix(vecs)
-    with open(file_path, 'wb') as f:
-        for line in vecs:
-            np.savetxt(f, line, fmt='%.10f')
+    connected = False
+    graph = None
+    m = 0
+
+    while not connected:
+        m = np.random.randint(n, n * n + 1)
+        graph = nx.gnm_random_graph(n, m)
+        connected = nx.is_connected(graph)
+
+    s = f"p tww {n} {m}\n"
+
+    for u,v in graph.edges():
+        s += f"{u+1} {v+1}\n"
+
+    f = open(file_path, "w")
+    f.write(s)
+    f.close()
 
 
 def main() -> None:
@@ -44,20 +56,20 @@ def main() -> None:
 
     :return: None
     """
-    clustering_folder_path = f'../data/private/Clustering/'
-    if not os.path.exists(clustering_folder_path):
-        os.makedirs(clustering_folder_path, exist_ok=True)
+    graph_folder_path = f'../data/private/CSRGraph/'
+    if not os.path.exists(graph_folder_path):
+        os.makedirs(graph_folder_path, exist_ok=True)
 
-    n_vecs = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
-    for n in n_vecs:
-        clustering_n_folder_path = clustering_folder_path + f'{n}/'
-        if not os.path.exists(clustering_n_folder_path):
-            os.makedirs(clustering_n_folder_path, exist_ok=True)
+    n_nodes = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+    for n in n_nodes:
+        graph_n_folder_path = graph_folder_path + f'{n}/'
+        if not os.path.exists(graph_n_folder_path):
+            os.makedirs(graph_n_folder_path, exist_ok=True)
 
         for i in range(100):
-            file_path = clustering_n_folder_path + f'{i}.mtx'
+            file_path = graph_n_folder_path + f'{i}.gr'
             if not os.path.exists(file_path):
-                generate_clustering_instance(n, i + 3, file_path)
+                generate_graph(n, file_path)
 
 
 if __name__ == '__main__':

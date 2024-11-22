@@ -21,5 +21,6 @@
 python3 generate_clustering.py
 python3 generate_FacilityLocation.py
 python3 generate_graph.py
+python3 generate_csrgraph.py
 python3 generate_WeightedCoverage.py
 python3 generate_BipartiteInfluence.py
