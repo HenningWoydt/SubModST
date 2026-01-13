@@ -39,8 +39,8 @@ int main(int argc, char *argv[]) {
 
     } else if (ac.function == "GroupClosenessCentrality") {
         auto graph = SubModST::Graph(ac.input_file_path);
-        SubModST::Matrix<int> mtx = graph.get_GroupClosenessCentralityMatrix();
-        auto solver = SubModST::Solver<SubModST::Matrix<int>, int>(mtx, ac.k, ac);
+        SubModST::Matrix<long int> mtx = graph.get_GroupClosenessCentralityMatrix<long int>();
+        auto solver = SubModST::Solver<SubModST::Matrix<long int>, long int>(mtx, ac.k, ac);
         solver.search();
         solver.write_output(ac.output_file_path);
 

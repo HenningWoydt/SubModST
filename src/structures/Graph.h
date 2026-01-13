@@ -28,15 +28,14 @@
 #include "Matrix.h"
 
 namespace SubModST {
-
     /**
      * Class for defining a graph.
      */
     class Graph {
     private:
         size_t m_n_vertex; // number of nodes
-        size_t m_n_edges; // number of edges
-        std::vector<std::vector<uint32_t>> m_adj_list;
+        size_t m_n_edges;  // number of edges
+        std::vector<std::vector<uint32_t> > m_adj_list;
 
     public:
         /**
@@ -115,16 +114,17 @@ namespace SubModST {
         /**
          * Returns the matrix used to optimize Negative Group Farness. The
          * matrix has nxn entries. The entry m_ij is the distance of the
-         * shortest path between i an j, but negative. The matrix represents the
+         * shortest path between i and j, but negative. The matrix represents the
          * negative distance matrix of the graph. The distance matrix has to be
          * negative, because the solver expects a maximization problem.
          * The graph must be connected, else it results in undefined behaviour.
          *
          * @return The matrix.
          */
-        inline Matrix<int> get_GroupClosenessCentralityMatrix() const {
-            Matrix<int> mtx(m_n_vertex, m_n_vertex);
-            mtx.set_special_scores(-(int) (m_n_vertex * m_n_vertex), std::numeric_limits<int>::max());
+        template<class T>
+        inline Matrix<T> get_GroupClosenessCentralityMatrix() const {
+            Matrix<T> mtx(m_n_vertex, m_n_vertex);
+            mtx.set_special_scores(-(T) (m_n_vertex * m_n_vertex), std::numeric_limits<T>::max());
 
             // initialize arrays to help
             std::vector<uint32_t> stack1(m_n_vertex);
@@ -133,7 +133,7 @@ namespace SubModST {
 
             for (uint32_t i = 0; i < m_n_vertex; ++i) {
                 // for every vertex, calculate distance to all other vertices
-                int curr_distance = 0;
+                T curr_distance = 0;
                 size_t stack1_size = 0;
                 size_t stack2_size = 0;
                 std::fill(bool_arr.begin(), bool_arr.end(), 0);
